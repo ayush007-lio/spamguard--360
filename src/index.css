@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 100% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 200 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 92%;
+    --secondary-foreground: 215 25% 15%;
+
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 185 100% 50%;
+    --accent-foreground: 215 25% 15%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 215 25% 15%;
+
+    --border: 215 20% 85%;
+    --input: 215 20% 85%;
+    --ring: 200 100% 50%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(200 100% 45%), hsl(185 100% 50%));
+    --gradient-danger: linear-gradient(135deg, hsl(0 85% 60%), hsl(15 90% 55%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 45%), hsl(155 70% 50%));
+    --gradient-cyber: linear-gradient(135deg, hsl(215 30% 12%), hsl(200 40% 18%));
+    
+    --shadow-glow: 0 0 20px hsl(185 100% 50% / 0.3);
+    --shadow-card: 0 4px 20px hsl(215 25% 15% / 0.08);
+    --shadow-elevated: 0 10px 40px hsl(215 25% 15% / 0.15);
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 28% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 30% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 185 100% 50%;
+    --primary-foreground: 215 30% 8%;
+
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 25% 16%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 200 100% 55%;
+    --accent-foreground: 215 30% 8%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 50%;
+    --success-foreground: 215 30% 8%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 215 30% 8%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 18%;
+    --ring: 185 100% 50%;
+
+    --shadow-glow: 0 0 30px hsl(185 100% 50% / 0.4);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 10px 40px hsl(0 0% 0% / 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  @font-face {
+    font-family: 'Geist';
+    src: local('system-ui'), local('-apple-system'), local('BlinkMacSystemFont');
+    font-display: swap;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-danger {
+    background: var(--gradient-danger);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .gradient-cyber {
+    background: var(--gradient-cyber);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-scan {
+    animation: scan 2s ease-in-out infinite;
+  }
+
+  @keyframes scan {
+    0%, 100% {
+      opacity: 0.3;
+      transform: translateY(-100%);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(100%);
+    }
+  }
+}

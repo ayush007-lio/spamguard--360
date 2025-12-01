@@ -1,0 +1,4 @@
+project_id = "vsukzilvihtrkdvcedmu"
+
+[functions.detect-spam]
+verify_jwt = true
