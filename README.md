@@ -8,6 +8,8 @@
 ![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
 
 ---
+<img width="1757" height="801" alt="Screenshot (62)" src="https://github.com/user-attachments/assets/d17c1341-9029-4639-bc82-d7cd42e73fe8" />
+<img width="1780" height="821" alt="Screenshot (63)" src="https://github.com/user-attachments/assets/4f3da5e1-06f7-45ef-8f9f-da3af8dc8a08" />
 
 ## 🚨 The Problem
 In the digital age, phishing and spam are no longer just annoyances—they are security threats. Traditional filters rely on "Blacklists" of keywords that hackers easily bypass. **SpamGuard-360** was built to solve this by using **Context-Aware Artificial Intelligence**.
