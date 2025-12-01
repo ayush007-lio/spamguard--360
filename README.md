@@ -1,73 +1,50 @@
-# Welcome to your Lovable project
+# 🛡️ SpamGuard-360
+> **The Next-Generation AI Threat Detection Ecosystem**
 
-## Project info
+![Build Status](https://img.shields.io/badge/Build-Stable-brightgreen?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python)
+![Stack](https://img.shields.io/badge/FullStack-Flask%20%2B%20React-orange?style=for-the-badge)
+![AI Model](https://img.shields.io/badge/Model-SVM%20%2B%20TFIDF-blueviolet?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
 
-**URL**: https://lovable.dev/projects/cbdf62fc-16ac-4768-88b7-8baed1b6703d
+---
 
-## How can I edit this code?
+## 🚨 The Problem
+In the digital age, phishing and spam are no longer just annoyances—they are security threats. Traditional filters rely on "Blacklists" of keywords that hackers easily bypass. **SpamGuard-360** was built to solve this by using **Context-Aware Artificial Intelligence**.
 
-There are several ways of editing your application.
+## 💡 The Solution
+**SpamGuard-360** is a hybrid threat detection system that uses **Natural Language Processing (NLP)** and **Support Vector Machines (SVM)** to analyze the *semantics* of a message, not just the keywords. It provides real-time protection across two fronts:
+1.  **Web Command Center:** For detailed analysis and manual scanning.
+2.  **WhatsApp Bot:** For on-the-go protection on your mobile device.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cbdf62fc-16ac-4768-88b7-8baed1b6703d) and start prompting.
+## ✨ Key Features (Why this is Unique)
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🧠 **Granular Confidence Engine**
+Unlike basic tools that say "Yes/No", SpamGuard-360 calculates a **Probability Score** (e.g., *"98.5% Confidence"*).
+* **Green Shield:** Verified Safe (0-40% Risk)
+* **Red Alert:** High-Risk Threat (>60% Risk)
 
-**Use your preferred IDE**
+### 📱 **WhatsApp Integration (Live Bot)**
+Seamlessly integrated with the Twilio API. Users can forward suspicious texts to the bot and receive an instant AI analysis in **<1.5 seconds**.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### ⚡ **Advanced NLP Pipeline**
+* **TF-IDF Vectorization:** Weighs rare words (like "Urgent", "Winner") higher than common words.
+* **SVM Classification:** Uses a linear kernel to draw a precise mathematical line between "Spam" and "Ham".
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🎨 **Modern "Lovable" UI**
+A futuristic, responsive, dark-mode dashboard built with **React & Tailwind CSS** principles for a professional cybersecurity aesthetic.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🛠️ System Architecture
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/cbdf62fc-16ac-4768-88b7-8baed1b6703d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```mermaid
+graph LR
+    User[👤 User] -->|WhatsApp / Web| API[Flask API Server]
+    API -->|Raw Text| Pre[Preprocessing Tokenizer]
+    Pre -->|Cleaned Data| TF[TF-IDF Vectorizer]
+    TF -->|Numeric Vectors| SVM[SVM Classifier]
+    SVM -->|Probability Score| API
+    API -->|Confidence & Alert| User
